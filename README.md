@@ -7,8 +7,8 @@ __________________
 
 Alunos:
   * Alexandre dos Santos Rodrigues - 10921BCC037
-  * Gustavo Alves Falleiros - 10921BCC007
   * Felipe Batista Coelho - 
+  * Gustavo Alves Falleiros - 10921BCC007
   * Marco Aurélio Bosque - 10921BCC017
   * Pedro de Freitas Salomão -
   * Rodrigo Moraes Pinto - 10921BCC027
