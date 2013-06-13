@@ -10,7 +10,7 @@ Alunos:
   * Felipe Batista Coelho - 
   * Gustavo Alves Falleiros - 10921BCC007
   * Marco Aurélio Bosque - 10921BCC017
-  * Pedro de Freitas Salomão -
+  * Pedro de Freitas Salomão - 96557
   * Rodrigo Moraes Pinto - 10921BCC027
   * Yago Barros Barbosa - 10921BCC
   
