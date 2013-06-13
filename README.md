@@ -1,6 +1,8 @@
 Trabalho de Engenharia de Software
 ===============
 UNIVERSIDADE FEDERAL DE UBERLÂNDIA
+
+Professor: Marcelo de Almeida Maia
 __________________
 
 Alunos:
