@@ -13,6 +13,7 @@ Alunos:
   * Pedro de Freitas Salomão - 96557
   * Rodrigo Moraes Pinto - 10921BCC027
   * Yago Barros Barbosa - 10921BCC036
+  * Douglas Teruyuki Cabral - 92496
 
 ===============
    "Muitas pessoas associam o termo software aos programas de computador. Na verdade, essa é uma visão muito restritiva. Software não é apenas o programa, mas também todos os dados de documentação e configuração associados, necessários para que o programa opere corretamente" (SOMMERVILE, 2007, p.4).
