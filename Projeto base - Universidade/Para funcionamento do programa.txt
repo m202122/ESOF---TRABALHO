@@ -1,0 +1,9 @@
+Criar uma tabela no postgres:
+
+login ( usuario(varchar), senha(varchar), ocupacao(varchar)) => Arquivo 'login.sql'
+
+* chave primária : usuario
+
+* ocupacao :  professor OU secretario
+
+* colocar a senha do postgres na classe 'ConectarAOBanco'
