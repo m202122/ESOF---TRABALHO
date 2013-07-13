@@ -1,5 +1,4 @@
-SITE PARA DOWNLOAD DE TODOS OS ARQUIVOS DO REPOSITÓRIO
-http://maaubo.github.io/ESOF---TRABALHO/
+SITE PARA DOWNLOAD DE TODOS OS ARQUIVOS DO REPOSITÓRIO: http://maaubo.github.io/ESOF---TRABALHO/
 
 Trabalho de Engenharia de Software
 ===============
