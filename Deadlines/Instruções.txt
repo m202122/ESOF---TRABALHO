@@ -1,0 +1,19 @@
+Olá pessoal,
+
+como sugerido pelo Filipe, o arquivo .gantter é um diagrama de Gantt para nossas atividades
+
+ele é baseado em compartilhamento na nuvem... mas como nem todo mundo usa dropbox ou skydrive
+etc, (não sei se temos uma nuvem em comum), acredito que a melhor opção é salvar o diagrama
+dentro do github, que é o arquivo "Diagrama de Gantt.gantter"
+
+Para abrí-lo, basta se cadastrar em http://gantter.com/ e depois:
+
+Clicar em Project -> Import local gantter file
+Daí é só selecionar o caminho de rede deste arquivo no seu pc.
+
+No meu caso é "C:\Users\Douglas\Documents\GitHub\ESOF---TRABALHO\Deadlines"
+
+E depois é dar um save, daí o github já faz o trabalho sujo pra gente de fazer os merges...
+
+
+=) Qualquer sugestão é bem-vinda. 
