@@ -1,0 +1,12 @@
+Olá pessoal, 
+
+Pontapé para os casos de uso de nosso sistema.
+O diagrama foi criado com o Microsoft Visio Professional 2013, caso tenham versões anteriores,
+me comuniquem para que eu salve em outras extensões se possível.
+
+O *.pdf é apenas para visualização rápida.
+
+Sintam-se a vontade para modificá-lo. Ademais, não sei se o que eu fiz neste caso de uso existe,
+(um núcleo que personifica o banco de dados...) logo, precisa ser verificado se isto é permitido.
+
+Douglas 26.07.2013
