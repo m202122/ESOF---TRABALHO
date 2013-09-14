@@ -8,13 +8,14 @@ package sistema.de.controle.universidade;
  *
  * @author Administrador
  */
-public class Agenda extends javax.swing.JPanel {
+public class Agenda extends javax.swing.JFrame {
 
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -31,44 +32,51 @@ public class Agenda extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jLabel1.setText("Painel da agenda");
 
-        jButton1.setText("Lista de contatos");
+        jButton1.setText("Anotações");
 
-        jButton2.setText("Mensagens");
+        jButton2.setText("Lista de contatos");
 
-        jButton3.setText("Anotações");
+        jButton3.setText("Mensagens");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
+                        .addGap(153, 153, 153)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2)
                             .addComponent(jButton1)
                             .addComponent(jButton3))))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addComponent(jButton1)
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(jButton2)
-                .addGap(35, 35, 35)
+                .addGap(38, 38, 38)
                 .addComponent(jButton3)
-                .addGap(0, 135, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

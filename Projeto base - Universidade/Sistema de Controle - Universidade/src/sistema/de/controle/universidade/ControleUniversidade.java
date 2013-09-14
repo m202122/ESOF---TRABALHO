@@ -213,6 +213,7 @@ public class ControleUniversidade extends javax.swing.JFrame {
                                 String ocupacaoUser = "SELECT ocupacao FROM universidade.login WHERE login.usuario ='"+usuario+"'"; 
                                 rs =cd.query(ocupacaoUser);
                                 String frameOcupacao = UserPass(rs);
+                                System.out.println(frameOcupacao.toString());
                                 if(frameOcupacao.equals("[professor]")){
                                     //professor
                                     new BuscarAluno();
@@ -220,6 +221,11 @@ public class ControleUniversidade extends javax.swing.JFrame {
                                 if(frameOcupacao.equals("[secretario]")){
                                     //secretario
                                      new Secretario();
+                                }
+                                if(frameOcupacao.equals("[aluno]")){
+                                    //aluno
+                                    new Aluno();
+                                    
                                 }
                         }else{
                                 JOptionPane.showMessageDialog(null, "Senha inválida");
