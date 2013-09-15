@@ -170,39 +170,6 @@ CREATE TABLE horario_aula (
 
 
 
---------------------------Parte Avaliacao Prof/Aluno --------------------------
-
-CREATE TABLE lista_prof AS
-	SELECT DISTINCT e.id_prof,f.id_est,e.id_turma
-	FROM ensina e,frequenta f
-	WHERE e.id_turma=f.id_turma;
-	
-
-ALTER TABLE lista_prof
-		--ALTER COLUMN id_prof CHAR(11) NOT NULL,
-		--ALTER COLUMN id_est CHAR(11) NOT NULL,
-		ADD avaliacao INTEGER,
-		ADD CONSTRAINT pklista PRIMARY KEY(id_est,id_prof,id_turma),
-		ADD CONSTRAINT lista_alunos FOREIGN KEY(id_est,id_turma)
-	            REFERENCES frequenta(id_est,id_turma)
-	            ON UPDATE CASCADE ON DELETE SET NULL ,
-		ADD CONSTRAINT lista_profs FOREIGN KEY(id_prof,id_turma)
-		    REFERENCES ensina(id_prof,id_turma)
-		    ON UPDATE CASCADE ON DELETE SET NULL;
-
-
-UPDATE lista_prof   -- Preencher os campos
-SET avaliacao=75;
-
-SELECT l.id_prof,d.nome
-FROM lista_prof l,turma t,disciplina d
-WHERE l.id_turma=t.id AND t.cod_disc=d.codigo AND id_est='17217';
-
-
-UPDATE lista_prof
-SET avaliacao=20
-WHERE id_turma=100027 AND id_prof='11' AND id_est='00088';
--------------------------------------------------------------------------------------
 
 --
 -- PostgreSQL database dump
@@ -14356,3 +14323,77 @@ create table mensagem(
 CREATE SEQUENCE Seq -- para usar no id da msg
 START WITH 1
 INCREMENT BY 1;
+
+
+
+--------------------------Parte Avaliacao Prof/Aluno --------------------------
+
+
+CREATE TABLE lista_prof AS
+	SELECT DISTINCT e.id_prof,f.id_est,e.id_turma
+	FROM ensina e,frequenta f
+	WHERE e.id_turma=f.id_turma;
+	
+
+ALTER TABLE lista_prof
+		--ALTER COLUMN id_prof CHAR(11) NOT NULL,
+		--ALTER COLUMN id_est CHAR(11) NOT NULL,
+		ADD avaliacao INTEGER,
+		ADD CONSTRAINT pklista PRIMARY KEY(id_est,id_prof,id_turma),
+		ADD CONSTRAINT lista_alunos FOREIGN KEY(id_est,id_turma)
+	            REFERENCES frequenta(id_est,id_turma)
+	            ON UPDATE CASCADE ON DELETE SET NULL ,
+		ADD CONSTRAINT lista_profs FOREIGN KEY(id_prof,id_turma)
+		    REFERENCES ensina(id_prof,id_turma)
+		    ON UPDATE CASCADE ON DELETE SET NULL;
+
+
+UPDATE lista_prof   -- Preencher os campos
+SET avaliacao=75;
+
+SELECT p.nome,p.id,d.nome
+FROM lista_prof l,turma t,disciplina d,professor p
+WHERE l.id_turma=t.id AND t.cod_disc=d.codigo AND p.id=l.id_prof AND id_est='17217';
+
+
+UPDATE lista_prof
+SET avaliacao=20
+WHERE id_turma=100027 AND id_prof='11' AND id_est='00088';
+-------------------------------------------------------------------------------------
+--Agenda 
+
+
+CREATE TABLE agenda(
+		id_destinario CHAR(11),
+		id_agenda INTEGER,
+		PRIMARY KEY(id_destinario,id_agenda),
+		CONSTRAINT agenda_aluno FOREIGN KEY(id_destinario) REFERENCES estudante(id),
+		CONSTRAINT agenda_prof FOREIGN KEY(id_destinario) REFERENCES professor(id)
+		);
+
+CREATE TABLE lista_contatos(
+		id_destinario CHAR (11),
+		id_agenda INTEGER,
+		id_contato CHAR(11),
+		PRIMARY KEY(id_destinario,id_agenda,id_contato),
+		CONSTRAINT contato_agenda FOREIGN KEY(id_destinario,id_agenda) REFERENCES agenda
+		);
+
+CREATE TABLE lista_anotacoes(
+		id_destinario CHAR (11),
+		id_agenda INTEGER,
+		anotacao TEXT,
+		PRIMARY KEY(id_destinario,id_agenda),
+		CONSTRAINT anotacao_agenda FOREIGN KEY(id_destinario,id_agenda) REFERENCES agenda
+		);
+
+CREATE TABLE lista_amensagem(
+		id_destinario CHAR (11),
+		id_agenda INTEGER,
+		id_origem CHAR(11),
+		anotacao TEXT,
+		PRIMARY KEY(id_destinario,id_agenda),
+		CONSTRAINT mensagem_agenda FOREIGN KEY(id_destinario,id_agenda) REFERENCES agenda,
+		CONSTRAINT mensalunoa FOREIGN KEY(id_origem) REFERENCES estudante(id),
+		CONSTRAINT mensprofa FOREIGN KEY(id_origem) REFERENCES professor(id)
+		);
