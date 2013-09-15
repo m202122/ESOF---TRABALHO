@@ -207,7 +207,7 @@ public class EnviarMensagem extends javax.swing.JFrame {
         else {
             ResultSet rs = null;
             cd.ConectarBanco();
-            String query = "INSERT INTO universidade.mensagem(id_faculdade,msg) VALUES ('"+faculdade+"','"+msg+"')";
+            String query = "INSERT INTO universidade.mensagem(id_faculdade,msg,tipo) VALUES ('"+faculdade+"','"+msg+"','aluno')";
             int r;
             r = cd.updatequery(query);
             if(r == 1)
