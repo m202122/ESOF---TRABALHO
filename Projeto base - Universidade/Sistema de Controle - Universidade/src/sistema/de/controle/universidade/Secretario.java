@@ -3,6 +3,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import sistema.de.controle.universidade.BuscarProfessores;
+import sistema.de.controle.universidade.CriarTurma;
+import sistema.de.controle.universidade.HorasAulaProf;
+import sistema.de.controle.universidade.MatricularAlunos;
 import sistema.de.controle.universidade.estudante.*;
 import sistema.de.controle.universidade.professor.*;
 public class Secretario extends javax.swing.JFrame {
@@ -32,6 +36,7 @@ public class Secretario extends javax.swing.JFrame {
         TextAlunos = new java.awt.Label();
         jSeparator3 = new javax.swing.JSeparator();
         BotaoSairSistema = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -110,23 +115,29 @@ public class Secretario extends javax.swing.JFrame {
         });
 
         TextSistemaDeControleDisDos.setAlignment(java.awt.Label.CENTER);
-        TextSistemaDeControleDisDos.setFont(new java.awt.Font("Georgia", 3, 16));
+        TextSistemaDeControleDisDos.setFont(new java.awt.Font("Georgia", 3, 16)); // NOI18N
         TextSistemaDeControleDisDos.setText("SECRETARIA - CONTROLE DOCENTE / DISCENTE ");
 
         TextProfessores.setAlignment(java.awt.Label.CENTER);
-        TextProfessores.setFont(new java.awt.Font("Georgia", 2, 16));
+        TextProfessores.setFont(new java.awt.Font("Georgia", 2, 16)); // NOI18N
         TextProfessores.setText("Professores");
 
         TextAlunos.setAlignment(java.awt.Label.CENTER);
-        TextAlunos.setFont(new java.awt.Font("Georgia", 2, 16));
+        TextAlunos.setFont(new java.awt.Font("Georgia", 2, 16)); // NOI18N
         TextAlunos.setText("Alunos");
 
         BotaoSairSistema.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotaoSairSistema.setText("SAIR DO SISTEMA");
-        BotaoSairSistema.setActionCommand("SAIR DO SISTEMA");
         BotaoSairSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoSairSistemaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("ENVIAR MENSAGEM");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -151,13 +162,13 @@ public class Secretario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotaoAlunoMatricular, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TextAlunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                        .addComponent(BotaoAlunoInserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotaoAlunoRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotaoAlunoAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BotaoAlunoMatricular, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(TextAlunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(BotaoAlunoInserir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAlunoRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAlunoAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(9, 9, 9)
@@ -200,7 +211,9 @@ public class Secretario extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(BotaoAlunoAtualizar)
                                 .addGap(18, 18, 18)
-                                .addComponent(BotaoAlunoMatricular))))
+                                .addComponent(BotaoAlunoMatricular)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1))))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -268,6 +281,16 @@ public class Secretario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotaoSairSistemaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try{
+            new EnviarMensagem();
+        }
+        catch( Exception ex) {
+            JOptionPane.showMessageDialog(this, "Não foi possível abrir o painel"); 
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoAlunoAtualizar;
     private javax.swing.JButton BotaoAlunoInserir;
@@ -283,6 +306,7 @@ public class Secretario extends javax.swing.JFrame {
     private java.awt.Label TextAlunos;
     private java.awt.Label TextProfessores;
     private java.awt.Label TextSistemaDeControleDisDos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
