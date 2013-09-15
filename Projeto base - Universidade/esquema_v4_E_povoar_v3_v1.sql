@@ -14345,7 +14345,6 @@ INSERT INTO pre_requisito (disciplina, pre_req) VALUES ('GSI018', 'GSI013');
 INSERT INTO pre_requisito (disciplina, pre_req) VALUES ('GSI020', 'GSI015');
 INSERT into pre_requisito VALUES ('GBC228','GBC016');
 
-
 create table mensagem(
 	id_msg char(11) DEFAULT nextval('Seq'),
 	id_faculdade char(5) NOT NULL,
