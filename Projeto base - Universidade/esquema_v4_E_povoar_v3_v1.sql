@@ -167,6 +167,43 @@ CREATE TABLE horario_aula (
   CONSTRAINT fk_aula_turma FOREIGN KEY (id_turma) REFERENCES turma (id)
 );
 
+
+
+
+--------------------------Parte Avaliacao Prof/Aluno --------------------------
+
+CREATE TABLE lista_prof AS
+	SELECT DISTINCT e.id_prof,f.id_est
+	FROM ensina e,frequenta f
+	WHERE e.id_turma=f.id_turma
+	GROUP BY(id_est,id_prof);
+
+ALTER TABLE lista_prof
+		--ALTER COLUMN id_prof CHAR(11) NOT NULL,
+		--ALTER COLUMN id_est CHAR(11) NOT NULL,
+		ADD avaliacao INTEGER,
+		ADD CONSTRAINT pklista PRIMARY KEY(id_est,id_prof,id_turma),
+		ADD CONSTRAINT lista_alunos FOREIGN KEY(id_est,id_turma)
+	            REFERENCES frequenta(id_est,id_turma)
+	            ON UPDATE CASCADE ON DELETE SET NULL ,
+		ADD CONSTRAINT lista_profs FOREIGN KEY(id_prof,id_turma)
+		    REFERENCES ensina(id_prof,id_turma)
+		    ON UPDATE CASCADE ON DELETE SET NULL;
+
+
+UPDATE lista_prof   -- Preencher os campos
+SET avaliacao=75;
+
+SELECT l.id_prof,d.nome
+FROM lista_prof l,turma t,disciplina d
+WHERE l.id_turma=t.id AND t.cod_disc=d.codigo AND id_est='17217';
+
+
+UPDATE lista_prof
+SET avaliacao=20
+WHERE id_turma=100027 AND id_prof='11' AND id_est='00088';
+-------------------------------------------------------------------------------------
+
 --
 -- PostgreSQL database dump
 --
