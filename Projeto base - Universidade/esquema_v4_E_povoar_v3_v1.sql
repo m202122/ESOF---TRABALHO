@@ -173,10 +173,10 @@ CREATE TABLE horario_aula (
 --------------------------Parte Avaliacao Prof/Aluno --------------------------
 
 CREATE TABLE lista_prof AS
-	SELECT DISTINCT e.id_prof,f.id_est
+	SELECT DISTINCT e.id_prof,f.id_est,e.id_turma
 	FROM ensina e,frequenta f
-	WHERE e.id_turma=f.id_turma
-	GROUP BY(id_est,id_prof);
+	WHERE e.id_turma=f.id_turma;
+	
 
 ALTER TABLE lista_prof
 		--ALTER COLUMN id_prof CHAR(11) NOT NULL,
