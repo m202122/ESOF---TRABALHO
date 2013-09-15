@@ -12,3 +12,4 @@ create table login(
 insert into login values ('1','1','professor');
 insert into login values ('2','2','secretario');
 insert into login values ('3','3','aluno');
+insert into login values ('17217','123456','aluno');
