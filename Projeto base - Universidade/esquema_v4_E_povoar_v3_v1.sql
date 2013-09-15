@@ -14324,7 +14324,7 @@ CREATE SEQUENCE Seq -- para usar no id da msg
 START WITH 1
 INCREMENT BY 1;
 
-
+alter table mensagem add column tipo char(20);
 
 --------------------------Parte Avaliacao Prof/Aluno --------------------------
 
