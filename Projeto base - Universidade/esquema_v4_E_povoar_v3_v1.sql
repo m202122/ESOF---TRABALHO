@@ -14312,6 +14312,10 @@ INSERT INTO pre_requisito (disciplina, pre_req) VALUES ('GSI018', 'GSI013');
 INSERT INTO pre_requisito (disciplina, pre_req) VALUES ('GSI020', 'GSI015');
 INSERT into pre_requisito VALUES ('GBC228','GBC016');
 
+CREATE SEQUENCE Seq -- para usar no id da msg
+START WITH 1
+INCREMENT BY 1;
+
 create table mensagem(
 	id_msg char(11) DEFAULT nextval('Seq'),
 	id_faculdade char(5) NOT NULL,
@@ -14319,10 +14323,6 @@ create table mensagem(
 	CONSTRAINT pk_msg PRIMARY KEY(id_msg),
 	CONSTRAINT fk_faculdade FOREIGN KEY (id_faculdade) REFERENCES faculdade(sigla)
 );
-
-CREATE SEQUENCE Seq -- para usar no id da msg
-START WITH 1
-INCREMENT BY 1;
 
 alter table mensagem add column tipo char(20);
 
