@@ -14336,8 +14336,8 @@ insert into login(usuario,senha,ocupacao)
 select professor.id,'12345','professor'
 from professor;
 
-delete from frequenta where id_est='33' or id_est='34' or id_est='35' or id_est='47' or id_est='44' or id_est='46' or id_est='49' or id_est='43' or id_est='48' or id_est='32' or id_est='45';
-delete from estudante where id='33' or id='35' or id='44' or id='47' or id='46' or id='34' or id='49' or id='43' or id='48' or id='32' or id='45';
+delete from frequenta where id_est='33' or id_est='34' or id_est='35' or id_est='47' or id_est='44' or id_est='46' or id_est='49' or id_est='43' or id_est='48' or id_est='32' or id_est='45' or id_est='6';
+delete from estudante where id='33' or id='35' or id='44' or id='47' or id='46' or id='34' or id='49' or id='43' or id='48' or id='32' or id='45' or id='6';
 
 insert into login(usuario,senha,ocupacao)
 select estudante.id,'12345','aluno'
