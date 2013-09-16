@@ -14320,11 +14320,28 @@ create table mensagem(
 	id_msg char(11) DEFAULT nextval('Seq'),
 	id_faculdade char(5) NOT NULL,
 	msg char(400),
+	tipo char(20),
 	CONSTRAINT pk_msg PRIMARY KEY(id_msg),
 	CONSTRAINT fk_faculdade FOREIGN KEY (id_faculdade) REFERENCES faculdade(sigla)
 );
 
-alter table mensagem add column tipo char(20);
+create table login(
+   usuario varchar(100),
+   senha varchar(100),
+   ocupacao varchar(100),
+   primary key( usuario)
+);
+
+insert into login(usuario,senha,ocupacao)
+select professor.id,'12345','professor'
+from professor;
+
+delete from frequenta where id_est='33' or id_est='34' or id_est='35' or id_est='47' or id_est='44' or id_est='46' or id_est='49' or id_est='43' or id_est='48' or id_est='32' or id_est='45';
+delete from estudante where id='33' or id='35' or id='44' or id='47' or id='46' or id='34' or id='49' or id='43' or id='48' or id='32' or id='45';
+
+insert into login(usuario,senha,ocupacao)
+select estudante.id,'12345','aluno'
+from estudante;
 
 --------------------------Parte Avaliacao Prof/Aluno --------------------------
 
