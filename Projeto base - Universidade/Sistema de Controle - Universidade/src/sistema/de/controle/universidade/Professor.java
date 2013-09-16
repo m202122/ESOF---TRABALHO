@@ -11,7 +11,7 @@ public class Professor extends javax.swing.JFrame {
         TextSistemaDeControleDisDos = new java.awt.Label();
         jSeparator1 = new javax.swing.JSeparator();
         buscarAluno = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        botaoVerificarMsg = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -26,7 +26,12 @@ public class Professor extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        botaoVerificarMsg.setText("VERIFICAR MENSAGEM");
+        botaoVerificarMsg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVerificarMsgActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -36,12 +41,12 @@ public class Professor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextSistemaDeControleDisDos, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                    .addComponent(TextSistemaDeControleDisDos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buscarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(buscarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoVerificarMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 246, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -53,7 +58,7 @@ public class Professor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buscarAluno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(botaoVerificarMsg)
                 .addGap(0, 206, Short.MAX_VALUE))
         );
 
@@ -65,10 +70,15 @@ public class Professor extends javax.swing.JFrame {
         new BuscarAluno();
     }//GEN-LAST:event_buscarAlunoActionPerformed
 
+    private void botaoVerificarMsgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVerificarMsgActionPerformed
+        // TODO add your handling code here:
+        new ProfVerificaMsg();
+    }//GEN-LAST:event_botaoVerificarMsgActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Label TextSistemaDeControleDisDos;
+    private javax.swing.JButton botaoVerificarMsg;
     private javax.swing.JButton buscarAluno;
-    private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

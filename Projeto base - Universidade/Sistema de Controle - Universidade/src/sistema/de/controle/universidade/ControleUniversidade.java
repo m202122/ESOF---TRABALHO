@@ -178,7 +178,7 @@ public class ControleUniversidade extends javax.swing.JFrame {
     }    
     
     private void MenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSobreActionPerformed
-        JOptionPane.showMessageDialog(null,"=> Ciência da Computação\n      _Desenvolvedores_\n* Gustavo Alves Falleiros\n* Marco Aurélio Bosque\n* Rodrigo Moraes Pinto","UNIVERSIDADE FEDERAL DE UBERLÂNDIA",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"=> Ciência da Computação\n      _Desenvolvedores_\n* Alexandre dos Santos Rodrigues\n* Gustavo Alves Falleiros\n* Marco Aurélio Bosque\n* Rodrigo Moraes Pinto","UNIVERSIDADE FEDERAL DE UBERLÂNDIA",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_MenuSobreActionPerformed
 
     private void MenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSairActionPerformed
@@ -216,7 +216,7 @@ public class ControleUniversidade extends javax.swing.JFrame {
                                 System.out.println(frameOcupacao.toString());
                                 if(frameOcupacao.equals("[professor]")){
                                     //professor
-                                    new BuscarAluno();
+                                    new Professor();
                                 }
                                 if(frameOcupacao.equals("[secretario]")){
                                     //secretario
