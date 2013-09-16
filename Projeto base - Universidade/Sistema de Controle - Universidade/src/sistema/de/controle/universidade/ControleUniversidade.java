@@ -187,9 +187,12 @@ public class ControleUniversidade extends javax.swing.JFrame {
                 System.exit(0);
         }
     }//GEN-LAST:event_MenuSairActionPerformed
-
+    
+    public static String a;
+    
     private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
         String usuario = CampoUsuario.getText();
+        a = usuario;
         String senha = CampoSenha.getText();
         ResultSet rs = null;
         ConectarAOBanco cd = null;
