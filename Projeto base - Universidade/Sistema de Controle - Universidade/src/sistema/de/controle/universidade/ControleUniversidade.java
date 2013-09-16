@@ -227,7 +227,7 @@ public class ControleUniversidade extends javax.swing.JFrame {
                                 }
                                 if(frameOcupacao.equals("[aluno]")){
                                     //aluno
-                                    new Aluno();
+                                    new Aluno(usuario);
                                     
                                 }
                         }else{
