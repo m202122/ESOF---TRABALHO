@@ -8,6 +8,7 @@ public class Professor extends javax.swing.JFrame {
         this.id = id;
         initComponents();
         setVisible(true);
+        setTitle("Painel do professor");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

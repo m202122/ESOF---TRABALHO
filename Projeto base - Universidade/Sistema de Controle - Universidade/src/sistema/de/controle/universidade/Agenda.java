@@ -3,6 +3,7 @@ public class Agenda extends javax.swing.JFrame {
     public Agenda() {
         initComponents();
         setVisible(true);
+        setTitle("Agenda");
     }
 
     @SuppressWarnings("unchecked")

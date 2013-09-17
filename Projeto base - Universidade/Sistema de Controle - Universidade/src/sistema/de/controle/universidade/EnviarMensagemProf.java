@@ -12,7 +12,7 @@ public class EnviarMensagemProf extends javax.swing.JFrame {
     javax.swing.DefaultListModel modelolistafac = new javax.swing.DefaultListModel();
     
     public EnviarMensagemProf() throws SQLException{
-        setTitle("Mensagem");
+        setTitle("Enviar mensagem para professores");
         initComponents();
         getFacList();
         setVisible(true);
@@ -36,11 +36,6 @@ public class EnviarMensagemProf extends javax.swing.JFrame {
         TextBaseDadosProfessor.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         TextBaseDadosProfessor.setText("Enviar mensagem para professores de uma faculdade");
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

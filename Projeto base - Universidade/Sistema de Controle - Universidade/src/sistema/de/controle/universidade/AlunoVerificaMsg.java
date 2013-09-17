@@ -12,6 +12,7 @@ public class AlunoVerificaMsg extends javax.swing.JFrame {
         initComponents();
         Preenche();
         setVisible(true);
+        setTitle("Verificando mensagens");
     }
     
     String val;

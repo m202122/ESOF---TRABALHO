@@ -21,6 +21,7 @@ public class AvaliarProfessor extends javax.swing.JFrame {
         initComponents();
         this.id = id;
         setVisible(true);
+        setTitle("Avaliar professor");
     }
 
     @SuppressWarnings("unchecked")

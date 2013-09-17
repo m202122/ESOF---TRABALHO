@@ -17,6 +17,7 @@ public class ProfVerificaMsg extends javax.swing.JFrame {
         initComponents();
         Preenche();
         setVisible(true);
+        setTitle("Verificar mensagens");
     }
     
     String val;
