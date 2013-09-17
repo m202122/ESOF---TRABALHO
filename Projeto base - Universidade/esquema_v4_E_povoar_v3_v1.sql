@@ -14343,6 +14343,18 @@ insert into login(usuario,senha,ocupacao)
 select estudante.id,'12345','aluno'
 from estudante;
 
+CREATE SEQUENCE avalia_id_avalia_seq -- para usar no id de avalia
+START WITH 1
+INCREMENT BY 1;
+
+create table avalia(
+	id_avalia INTEGER DEFAULT NEXTVAL('avalia_id_avalia_seq') NOT NULL,
+	id_prof char(11),
+	avalia char(400),
+	CONSTRAINT pk_id PRIMARY KEY(id_avalia),
+	CONSTRAINT fk_id_prof FOREIGN KEY(id_prof) REFERENCES professor(id)
+);
+
 --------------------------Parte Avaliacao Prof/Aluno --------------------------
 
 
