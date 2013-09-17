@@ -14361,7 +14361,7 @@ INCREMENT BY 1;
 
 CREATE TABLE contatos(
 	id_contato INTEGER DEFAULT nextval('contatos_id_seq'),
-	id_estudante char(11) NOT NULL,
+	id_estudante char(11),
 	nome_contato char(50),
 	telefone char(13),
 	email char(20),
