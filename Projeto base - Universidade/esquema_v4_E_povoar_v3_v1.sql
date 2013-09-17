@@ -14362,13 +14362,17 @@ INCREMENT BY 1;
 CREATE TABLE contatos(
 	id_contato INTEGER DEFAULT nextval('contatos_id_seq'),
 	id_estudante char(11),
-	nome_contato char(50),
+	nome_contato char(70),
 	telefone char(13),
-	email char(20),
+	email char(50),
 	extra char(50),
 	CONSTRAINT pk_est PRIMARY KEY(id_contato),
 	CONSTRAINT fk_est FOREIGN KEY(id_estudante) REFERENCES estudante(id)
 );
+
+update turma set ano='2013' where ano = '2011';
+
+insert into login values('a','a','secretario');
 
 --------------------------Parte Avaliacao Prof/Aluno --------------------------
 
