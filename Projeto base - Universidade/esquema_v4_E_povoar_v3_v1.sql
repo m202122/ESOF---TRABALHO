@@ -14355,6 +14355,21 @@ create table avalia(
 	CONSTRAINT fk_id_prof FOREIGN KEY(id_prof) REFERENCES professor(id)
 );
 
+CREATE SEQUENCE contatos_id_seq
+START WITH 1
+INCREMENT BY 1;
+
+CREATE TABLE contatos(
+	id_contato INTEGER DEFAULT nextval('contatos_id_seq'),
+	id_estudante char(11) NOT NULL,
+	nome_contato char(50),
+	telefone char(11),
+	email char(20),
+	extra char(50),
+	CONSTRAINT pk_est PRIMARY KEY(id_contato),
+	CONSTRAINT fk_est FOREIGN KEY(id_estudante) REFERENCES estudante(id)
+);
+
 --------------------------Parte Avaliacao Prof/Aluno --------------------------
 
 

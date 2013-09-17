@@ -40,6 +40,11 @@ public class Aluno extends javax.swing.JFrame {
         jButton1.setText("Notas");
 
         jButton2.setText("Agenda");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Avaliar professor");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -60,11 +65,10 @@ public class Aluno extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(110, 110, 110)
-                                .addComponent(jButton3)))))
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))
+                        .addGap(102, 102, 102)
+                        .addComponent(jButton3)))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,6 +95,11 @@ public class Aluno extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AvaliarProfessor(id);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
