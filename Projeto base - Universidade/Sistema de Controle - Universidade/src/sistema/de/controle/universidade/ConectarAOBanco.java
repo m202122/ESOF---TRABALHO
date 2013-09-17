@@ -6,7 +6,7 @@ import java.sql.*;
         public void ConectarBanco() {
             String url = "jdbc:postgresql://localhost:5432";
             String username = "postgres";
-            String password = "overdose";
+            String password = "190976";
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, username, password);
