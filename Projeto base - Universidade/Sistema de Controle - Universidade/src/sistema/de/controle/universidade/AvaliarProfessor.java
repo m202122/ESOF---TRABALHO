@@ -222,7 +222,7 @@ ConectarAOBanco cd;
        
 
         String avaliacao = jTextField2.getText();
-         String queryUpdate = "UPDATE lista_prof SET avaliacao="+avaliacao+" WHERE id_prof='"+idp+"' AND id_est='"+id+"'";
+         String queryUpdate = "UPDATE universidade.lista_prof SET avaliacao="+avaliacao+" WHERE id_prof='"+idp+"' AND id_est='"+id+"'";
         int r = cd.updatequery(queryUpdate);
         if(r==1)
         {
