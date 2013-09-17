@@ -219,7 +219,7 @@ public class ControleUniversidade extends javax.swing.JFrame {
                                 System.out.println(frameOcupacao.toString());
                                 if(frameOcupacao.equals("[professor]")){
                                     //professor
-                                    new Professor();
+                                    new Professor(usuario);
                                 }
                                 if(frameOcupacao.equals("[secretario]")){
                                     //secretario
