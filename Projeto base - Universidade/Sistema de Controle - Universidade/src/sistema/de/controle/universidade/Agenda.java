@@ -41,6 +41,11 @@ public class Agenda extends javax.swing.JFrame {
         jButton2.setText("Lista de contatos");
 
         jButton3.setText("Mensagens");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +80,10 @@ public class Agenda extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       new AlunoVerificaMsg();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
