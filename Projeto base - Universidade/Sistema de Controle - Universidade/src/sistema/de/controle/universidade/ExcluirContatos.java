@@ -123,11 +123,6 @@ public class ExcluirContatos extends javax.swing.JFrame {
 
         jLabel1.setText("Nomes dos contatos");
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         jButton1.setText("EXCLUIR CONTATO");
