@@ -205,9 +205,7 @@ public class ExcluirContatos extends javax.swing.JFrame {
                 System.out.println(nome);
                 String id = "SELECT c.id_contato FROM universidade.contatos c WHERE c.nome_contato='"+nome+"' AND c.id_estudante='"+ControleUniversidade.a+"'";
                 rs = cd.query(id);
-                
-                String id_int = getInfo(rs);// Integer.parseInt(id);
-                
+                String id_int = getInfo(rs);
                 String query = "DELETE FROM universidade.contatos c where c.id_contato='"+id_int+"'";
                 int r;
                 r = cd.updatequery(query);
