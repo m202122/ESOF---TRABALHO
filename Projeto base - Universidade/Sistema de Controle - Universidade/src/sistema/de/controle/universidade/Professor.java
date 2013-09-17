@@ -1,6 +1,11 @@
 package sistema.de.controle.universidade;
+
 public class Professor extends javax.swing.JFrame {
-    public Professor() {
+    
+    String id;
+    
+    public Professor(String id) {
+        this.id = id;
         initComponents();
         setVisible(true);
     }
@@ -77,17 +82,15 @@ public class Professor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarAlunoActionPerformed
-        // TODO add your handling code here:
         new BuscarAluno();
     }//GEN-LAST:event_buscarAlunoActionPerformed
 
     private void botaoVerificarMsgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVerificarMsgActionPerformed
-        // TODO add your handling code here:
         new ProfVerificaMsg();
     }//GEN-LAST:event_botaoVerificarMsgActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        new ProfNota(id);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
