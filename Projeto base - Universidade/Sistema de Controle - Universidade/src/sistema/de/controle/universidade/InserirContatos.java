@@ -1,10 +1,50 @@
 package sistema.de.controle.universidade;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class InserirContatos extends javax.swing.JFrame {
     public InserirContatos() {
         initComponents();
         setVisible(true);
+        insere();
+        setTitle("Inserir novo contato");
     }
     @SuppressWarnings("unchecked")
+    
+    private void insere()
+    {
+        ResultSet rs = null;
+        ConectarAOBanco cd = new ConectarAOBanco();
+        try {
+            cd.ConectarBanco();
+            String nome = jTextField1.getText().toString();
+            String telefone = jTextField2.getText().toString();
+            String email = jTextField3.getText().toString();
+            String extra = jTextArea1.getText().toString();
+            if(nome.equals("")||telefone.equals("")||email.equals(""))
+            {
+                JOptionPane.showMessageDialog( this, "Campo nome não preenchido" );
+            }
+            String query = "INSERT INTO universidade.contatos(id_estudante,nome_contato,telefone,email,extra) VALUES ('"+ControleUniversidade.a+"','"+nome+"','"+telefone+"','"+email+"','"+extra+"')";        
+            int r;
+            r = cd.updatequery(query);
+            if(r == 1)
+            {
+                JOptionPane.showMessageDialog( this, "Novo contato inserido!" );
+            }
+            else
+            {
+                JOptionPane.showMessageDialog( this, "Novo contato não inserido!" );
+            }
+        }
+        catch ( Exception sqlex ) {
+            //sqlex.printStackTrace();
+            JOptionPane.showMessageDialog( this, "Não é possível adicionar novo contato" );
+        }
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
