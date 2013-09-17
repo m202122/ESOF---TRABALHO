@@ -14363,7 +14363,7 @@ CREATE TABLE contatos(
 	id_contato INTEGER DEFAULT nextval('contatos_id_seq'),
 	id_estudante char(11) NOT NULL,
 	nome_contato char(50),
-	telefone char(11),
+	telefone char(13),
 	email char(20),
 	extra char(50),
 	CONSTRAINT pk_est PRIMARY KEY(id_contato),

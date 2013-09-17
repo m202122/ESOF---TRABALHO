@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
         <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/AlunoVerificaMsg.java</file>
-        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/AvaliarProfessor.java</file>
-        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/ConectarAOBanco.java</file>
+        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/ControleUniversidade.java</file>
+        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/EnviarMensagemProf.java</file>
+        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/InfoProfessor.java</file>
+        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/Aluno.java</file>
+        <file>file:/C:/Users/Marco/Documents/GitHub/ESOF---TRABALHO/Projeto%20base%20-%20Universidade/Sistema%20de%20Controle%20-%20Universidade/src/sistema/de/controle/universidade/Agenda.java</file>
     </open-files>
 </project-private>
