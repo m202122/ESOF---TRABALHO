@@ -69,7 +69,7 @@ public class NotaProf extends javax.swing.JFrame {
         TextInf2.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
         TextInf2.setText("Enviar nota do aluno");
 
-        jLabel1.setText("Turma:");
+        jLabel1.setText("Codigo da disciplina:");
 
         jButton1.setText("Filtrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +101,11 @@ public class NotaProf extends javax.swing.JFrame {
         });
 
         jButton4.setText("Voltar ao Painel anterior");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -183,12 +188,20 @@ public class NotaProf extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  
+        String query = null;
         model.setRowCount(0);
         ResultSet rs = null;
         cd = new ConectarAOBanco();
         String nome = jTextField1.getText();
         nome = nome.toUpperCase();
-            String query = "SELECT DISTINCT d.nome, t.turma, t.id FROM universidade.professor p, universidade.turma t, universidade.ensina e, universidade.disciplina d WHERE p.id='"+id+"' AND p.id=e.id_prof AND e.id_turma=t.id AND t.cod_disc=d.codigo ORDER BY d.nome";
+        
+        if(nome.isEmpty()){
+            query = "SELECT DISTINCT d.nome, t.turma, t.id FROM universidade.professor p, universidade.turma t, universidade.ensina e, universidade.disciplina d WHERE p.id='"+id+"' AND p.id=e.id_prof AND e.id_turma=t.id AND t.cod_disc=d.codigo ORDER BY d.nome";
+        }
+        else{
+            query = "SELECT DISTINCT d.nome, t.turma, t.id FROM universidade.professor p, universidade.turma t, universidade.ensina e, universidade.disciplina d WHERE p.id='"+id+"' AND p.id=e.id_prof AND e.id_turma=t.id AND t.cod_disc='"+nome+"' AND t.cod_disc=d.codigo ORDER BY d.nome";
+        }
+            
             cd.ConectarBanco();
             rs = cd.query(query);
             getTable(rs);
@@ -346,6 +359,10 @@ public class NotaProf extends javax.swing.JFrame {
             }
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
     
     private void PegaAluno()
     {
