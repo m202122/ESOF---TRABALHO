@@ -55,6 +55,11 @@ public class Agenda extends javax.swing.JFrame {
         });
 
         jButton6.setText("Marcar datas de provas");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +135,11 @@ public class Agenda extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        new MarcaProva();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
