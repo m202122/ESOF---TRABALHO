@@ -91,7 +91,7 @@ public class Professor extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVerificarMsgActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new ProfNota(id);
+        new NotaProf(id);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
