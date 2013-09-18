@@ -42,7 +42,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="TextSistemaDeControleDisDos" alignment="1" max="32767" attributes="0"/>
-          <Component id="TextInf2" alignment="1" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Component id="jSeparator3" min="-2" pref="311" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -72,9 +71,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="TextSistemaDeControleDisDos" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="TextInf2" min="-2" pref="20" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -104,17 +101,9 @@
         <Property name="text" type="java.lang.String" value="Aluno"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="TextInf2">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="12" style="2"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Selecione a turma que deseja saber a nota"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Turma:"/>
+        <Property name="text" type="java.lang.String" value="Codigo da disciplina:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
@@ -141,6 +130,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar ao Painel anterior"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>

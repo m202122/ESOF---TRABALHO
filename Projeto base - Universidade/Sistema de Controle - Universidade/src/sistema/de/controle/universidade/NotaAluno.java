@@ -35,7 +35,6 @@ public class NotaAluno extends javax.swing.JFrame {
         turma = new java.awt.Label();
         turma2 = new java.awt.Label();
         TextSistemaDeControleDisDos = new java.awt.Label();
-        TextInf2 = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -57,10 +56,7 @@ public class NotaAluno extends javax.swing.JFrame {
         TextSistemaDeControleDisDos.setFont(new java.awt.Font("Georgia", 3, 16)); // NOI18N
         TextSistemaDeControleDisDos.setText("Aluno");
 
-        TextInf2.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
-        TextInf2.setText("Selecione a turma que deseja saber a nota");
-
-        jLabel1.setText("Turma:");
+        jLabel1.setText("Codigo da disciplina:");
 
         jButton1.setText("Filtrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +69,11 @@ public class NotaAluno extends javax.swing.JFrame {
         turma1.setText("Turmas encontradas");
 
         jButton4.setText("Voltar ao Painel anterior");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,7 +92,6 @@ public class NotaAluno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(TextSistemaDeControleDisDos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(TextInf2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -114,9 +114,7 @@ public class NotaAluno extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(TextSistemaDeControleDisDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextInf2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -138,12 +136,20 @@ public class NotaAluno extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  
+        String query=null;
         model.setRowCount(0);
         ResultSet rs = null;
         cd = new ConectarAOBanco();
         String nome = jTextField1.getText();
         nome = nome.toUpperCase();
-            String query = "SELECT DISTINCT d.nome, t.turma, f.nota FROM universidade.turma t, universidade.estudante e, universidade.disciplina d, universidade.frequenta f WHERE f.id_est='"+id+"' AND f.id_turma=t.id AND t.cod_disc=d.codigo ORDER BY d.nome";
+        
+        if(nome.isEmpty()){
+            query = "SELECT DISTINCT d.nome, t.turma, f.nota FROM universidade.turma t, universidade.estudante e, universidade.disciplina d, universidade.frequenta f WHERE f.id_est='"+id+"' AND f.id_turma=t.id AND t.cod_disc=d.codigo ORDER BY d.nome";
+        }
+        else{
+            query = "SELECT DISTINCT d.nome, t.turma, f.nota FROM universidade.turma t, universidade.estudante e, universidade.disciplina d, universidade.frequenta f WHERE f.id_est='"+id+"' AND f.id_turma=t.id AND t.cod_disc = '"+nome+"' AND t.cod_disc=d.codigo ORDER BY d.nome";
+        }
+            
             cd.ConectarBanco();
             rs = cd.query(query);
             getTable(rs);
@@ -151,6 +157,10 @@ public class NotaAluno extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
             private void displayResultSet( ResultSet rs, JTable table) throws SQLException {
         // position to first record
@@ -218,30 +228,7 @@ public class NotaAluno extends javax.swing.JFrame {
 	 return null;
       }
    }    
-    private void PegaAluno()
-    {
-        if(jList1.isSelectionEmpty())
-            JOptionPane.showMessageDialog(this, "Selecione alguem pra ser atualizado!"); 
-        else
-        {
-            nome = jList1.getSelectedValue().toString();
-            System.out.println(nome);
-            ConectarAOBanco cd = new ConectarAOBanco();
-            cd.ConectarBanco();
-            ResultSet rs = null;
-            try {
-                
-                String query = "SELECT e.id FROM universidade.estudante e, universidade.frequenta f WHERE e.nome = '"+nome+"' and e.id=f.id_est and f.id_turma='"+codigo+"'";
-                rs = cd.query(query);
-                this.id_aluno = getInfo(rs);
-                
-            }catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-        }
-        
-        System.out.println(id_aluno);
-    }
+
         public int exibirResultado(ResultSet rs) throws SQLException {
         // position to first record
         boolean moreRecords = rs.next();
@@ -287,7 +274,6 @@ public class NotaAluno extends javax.swing.JFrame {
          return currentRow;
     }   
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Label TextInf2;
     private java.awt.Label TextSistemaDeControleDisDos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
